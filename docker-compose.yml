@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  url-shortener:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    ports:
+      - ${PORT}:${PORT}
+  redis:
+    env_file:
+      - .env
+    image: "redis:alpine"
+    restart: on-failure
+    ports:
+    - "${REDIS_PORT}:${REDIS_PORT}"
+    command: --port ${REDIS_PORT}
