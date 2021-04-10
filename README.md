@@ -85,5 +85,3 @@ curl -L -X GET http://localhost:8080/OTv0FdGU8Ng
 ```bash
 curl -L -X DELETE http://localhost:8080/OTv0FdGU8Ng
 ```
-
-# urlshortener
